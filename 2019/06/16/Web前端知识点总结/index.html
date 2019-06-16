@@ -1,0 +1,1574 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+
+<link rel="stylesheet" href="/css/main.css?v=7.1.2">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.1.2">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.1.2">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.1.2">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=7.1.2" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.1.2',
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false,"dimmer":false},
+    back2top: true,
+    back2top_sidebar: false,
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="Web前端知识点总结1. B/S架构资源 静态资源：使用静态网页开发技术发布的资源  所有用户访问，得到的结果是一样的。 如：文本，图片，音频、视频, HTML,CSS,JavaScript。 如果用户请求的是静态资源，那么服务器会直接将静态资源发送给浏器。 用HTML搭建基础网页， 用CSS美化、布局页面，用JavaScript控制页面的元素，让页面有动态效果。  动态资源：使用动态网页及时发布">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Web前端">
+<meta property="og:url" content="http://yoursite.com/2019/06/16/Web前端知识点总结/index.html">
+<meta property="og:site_name" content="Space">
+<meta property="og:description" content="Web前端知识点总结1. B/S架构资源 静态资源：使用静态网页开发技术发布的资源  所有用户访问，得到的结果是一样的。 如：文本，图片，音频、视频, HTML,CSS,JavaScript。 如果用户请求的是静态资源，那么服务器会直接将静态资源发送给浏器。 用HTML搭建基础网页， 用CSS美化、布局页面，用JavaScript控制页面的元素，让页面有动态效果。  动态资源：使用动态网页及时发布">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-06-16T01:56:40.966Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Web前端">
+<meta name="twitter:description" content="Web前端知识点总结1. B/S架构资源 静态资源：使用静态网页开发技术发布的资源  所有用户访问，得到的结果是一样的。 如：文本，图片，音频、视频, HTML,CSS,JavaScript。 如果用户请求的是静态资源，那么服务器会直接将静态资源发送给浏器。 用HTML搭建基础网页， 用CSS美化、布局页面，用JavaScript控制页面的元素，让页面有动态效果。  动态资源：使用动态网页及时发布">
+
+
+
+
+
+  
+  
+  <link rel="canonical" href="http://yoursite.com/2019/06/16/Web前端知识点总结/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>Web前端 | Space</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Space</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="Navigationsleiste an/ausschalten">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>Startseite</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archiv</a>
+
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/16/Web前端知识点总结/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Eric">
+      <meta itemprop="description" content="Eric's Knowledge Base">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Space">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Web前端
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+
+              
+                
+              
+
+              <time title="Erstellt: 2019-06-16 09:56:10 / Geändert am: 09:56:40" itemprop="dateCreated datePublished" datetime="2019-06-16T09:56:10+08:00">2019-06-16</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="Web前端知识点总结"><a href="#Web前端知识点总结" class="headerlink" title="Web前端知识点总结"></a>Web前端知识点总结</h1><h3 id="1-B-S架构资源"><a href="#1-B-S架构资源" class="headerlink" title="1. B/S架构资源"></a>1. B/S架构资源</h3><blockquote>
+<p><strong>静态资源：</strong>使用静态网页开发技术发布的资源</p>
+<ul>
+<li>所有用户访问，得到的结果是一样的。</li>
+<li>如：文本，图片，音频、视频, HTML,CSS,JavaScript。</li>
+<li>如果用户请求的是静态资源，那么服务器会直接将静态资源发送给浏器。</li>
+<li>用HTML搭建基础网页， 用CSS美化、布局页面，用JavaScript控制页面的元素，让页面有动态效果。</li>
+</ul>
+<p><strong>动态资源：</strong>使用动态网页及时发布的资源</p>
+<ul>
+<li>所有用户访问，得到的结果可能不一样。</li>
+<li>如：jsp/servlet,php,asp…。</li>
+<li>如果用户请求的是动态资源，那么服务器会执行动态资源，转换为静态资源，再发送给浏览器。</li>
+</ul>
+</blockquote>
+<h3 id="2-HTML"><a href="#2-HTML" class="headerlink" title="2. HTML"></a>2. HTML</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Hyper Text Markup Language 超文本标记语言，是最基础的网页开发语言</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p><strong>超文本</strong>：用超链接的方法，将各种不同空间的文字信息组织在一起的网状文本</p>
+<p><strong>标记语言</strong>：由标签&lt;标签名称&gt; 构成的语言，如html、xml，不属于编程语言。</p>
+<p><strong>标签</strong>：标签可以嵌套，不区分大小写，建议用小写，分为两类：</p>
+<ul>
+<li>围堵标签：有开始标签和结束标签。如 <html> </html></li>
+<li>自闭标签：开始标签和结束标签在一起。如 &lt; br/&gt;</li>
+</ul>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th align="left">标签</th>
+<th>说明</th>
+<th>属性</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">&lt; html&gt;</td>
+<td>文档的根标签</td>
+<td></td>
+</tr>
+<tr>
+<td align="left">&lt; head&gt;</td>
+<td>头标签，用于指定html文档的一些属性，引入外部的资源</td>
+<td></td>
+</tr>
+<tr>
+<td align="left">&lt; title&gt;</td>
+<td>标题标签</td>
+<td></td>
+</tr>
+<tr>
+<td align="left">&lt; body&gt;</td>
+<td>体标签</td>
+<td></td>
+</tr>
+<tr>
+<td align="left">&lt; !DOCTYPE html &gt;</td>
+<td>html5中定义该文档是html文档</td>
+<td></td>
+</tr>
+<tr>
+<td align="left">&lt; !– 注释内容 – &gt;</td>
+<td>注释</td>
+<td></td>
+</tr>
+<tr>
+<td align="left">&lt; h1&gt; to &lt; h6&gt;</td>
+<td>标题标签，h1到h6字体大小逐渐递减</td>
+<td></td>
+</tr>
+<tr>
+<td align="left">&lt; p&gt;</td>
+<td>段落标签</td>
+<td></td>
+</tr>
+<tr>
+<td align="left">&lt; br/&gt;</td>
+<td>换行标签</td>
+<td></td>
+</tr>
+<tr>
+<td align="left">&lt; hr&gt;</td>
+<td>展示一条水平线</td>
+<td>color/width/size/align</td>
+</tr>
+<tr>
+<td align="left">&lt; b&gt;</td>
+<td>字体加粗</td>
+<td></td>
+</tr>
+<tr>
+<td align="left">&lt; i&gt;</td>
+<td>字体斜体</td>
+<td></td>
+</tr>
+<tr>
+<td align="left">&lt; font&gt;</td>
+<td>字体标签</td>
+<td>color/face/size</td>
+</tr>
+<tr>
+<td align="left">&lt; center&gt;</td>
+<td>文本居中</td>
+<td></td>
+</tr>
+<tr>
+<td align="left">&lt; img src=” “ alt=” “&gt;</td>
+<td>展示图片（src为图片URL，alt为图片替代文本）</td>
+<td>align/height/width</td>
+</tr>
+<tr>
+<td align="left">&lt; ol&gt; &lt; li&gt;&lt; /li&gt; &lt; /ol&gt;</td>
+<td>有序列表</td>
+<td>type</td>
+</tr>
+<tr>
+<td align="left">&lt; ul&gt; &lt; li&gt;&lt; /li&gt; &lt; /ul&gt;</td>
+<td>无序列表</td>
+<td>type</td>
+</tr>
+<tr>
+<td align="left">&lt; a href=””&gt;&lt; /a&gt;</td>
+<td>超链接标签</td>
+<td>target( _self/ _blank)</td>
+</tr>
+<tr>
+<td align="left">&lt; div&gt;</td>
+<td>块级标签</td>
+<td></td>
+</tr>
+<tr>
+<td align="left">&lt; span&gt;</td>
+<td>行内标签</td>
+<td></td>
+</tr>
+<tr>
+<td align="left">&lt; header&gt;</td>
+<td>页眉</td>
+<td></td>
+</tr>
+<tr>
+<td align="left">&lt; footer&gt;</td>
+<td>页脚</td>
+<td></td>
+</tr>
+</tbody></table>
+<blockquote>
+<p><strong>超链接的功能</strong>：1. 生成可以被点击的样式；    2. 点击后跳转到href指定的url</p>
+<p>若需要保留1功能，去掉2功能，则：<code>href = &quot;javascript:void(0)&quot;</code></p>
+</blockquote>
+<h3 id="3-表格标签"><a href="#3-表格标签" class="headerlink" title="3. 表格标签"></a>3. 表格标签</h3><blockquote>
+<p><strong>table</strong>：定义表格</p>
+<ul>
+<li>width：宽度</li>
+<li>border：边框</li>
+<li>cellpadding：定义内容和单元格的距离</li>
+<li>cellspacing：定义单元格之间的距离。如果指定为0，则单元格的线会合为一条</li>
+<li>bgcolor：背景色</li>
+<li>align：对齐方式</li>
+</ul>
+<p><strong>tr</strong>：定义行</p>
+<ul>
+<li>bgcolor：背景色</li>
+<li>align：对齐方式</li>
+</ul>
+<p><strong>td</strong>：定义单元格</p>
+<ul>
+<li>colspan：合并列</li>
+<li>rowspan：合并行</li>
+</ul>
+<p><strong>th</strong>：定义表头单元格</p>
+</blockquote>
+<h3 id="4-表单标签"><a href="#4-表单标签" class="headerlink" title="4. 表单标签"></a>4. 表单标签</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">用于采集用户输入的数据，和服务器进行交互的标签。</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p><strong>action</strong>：指定提交数据的URL，若是写一个#，那么就是提交到本页面</p>
+<p><strong>method</strong>：指定提交方式，表单项中的数据要想被提交，必须指定其name属性</p>
+<ul>
+<li><p>get：请求参数会在地址栏中显示，参数大小不能超过255， 不太安全</p>
+</li>
+<li><p>post：请求参数不会在地址栏中显示，参数的大小没有限制，多用于提交视频和图片，比较安全</p>
+<p><strong>input</strong>：可以通过type属性值，改变元素展示的样式</p>
+</li>
+<li><p>text：文本输入框，默认值（参数placeholder：指定输入框的提示信息）</p>
+</li>
+<li><p>password：密码输入框</p>
+</li>
+<li><p>radio：单选框，多个单选框的name属性值必须一样，在value属性中指定其被选中后提交的值</p>
+</li>
+<li><p>checkbox：在value属性中指定其被选中后提交的值</p>
+</li>
+<li><p>file：文件选择框</p>
+</li>
+<li><p>hidden：隐藏域，用于提交一些信息，不需要用户输入</p>
+</li>
+<li><p>submit：提交按钮，可以提交表单</p>
+</li>
+<li><p>image：图片提交按钮，src属性指定图片的路径    </p>
+</li>
+</ul>
+<p><strong>label</strong>：label的for属性一般会和input的id属性值对应。点击label区域，会让对应的input输入框获取焦点</p>
+<p><strong>select</strong>：下拉列表，子元素option为指定列表项</p>
+<p><strong>textarea</strong>：文本域，cols：指定列数， rows：默认多少行</p>
+</blockquote>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>FormTest<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">"#"</span> <span class="attr">method</span>=<span class="string">"get"</span>&gt;</span></span><br><span class="line">    姓名：<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">placeholder</span>=<span class="string">"请输入姓名"</span> <span class="attr">name</span> = <span class="string">"username"</span>&gt;</span> <span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">    密码：<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"password"</span> <span class="attr">placeholder</span>=<span class="string">"请输入密码"</span> <span class="attr">name</span>=<span class="string">"password"</span>&gt;</span> <span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">    性别：<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"radio"</span> <span class="attr">name</span> = <span class="string">"gender"</span> <span class="attr">value</span>=<span class="string">"男"</span>&gt;</span> 男</span><br><span class="line">          <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"radio"</span> <span class="attr">name</span> = <span class="string">"gender"</span> <span class="attr">value</span>=<span class="string">"女"</span>&gt;</span> 女<span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">    爱好：<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"checkbox"</span> <span class="attr">name</span> = <span class="string">"hobby"</span> <span class="attr">value</span> = <span class="string">1</span>&gt;</span> 小米</span><br><span class="line">          <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"checkbox"</span> <span class="attr">name</span> = <span class="string">"hobby"</span> <span class="attr">value</span> = <span class="string">2</span>&gt;</span> 华为</span><br><span class="line">          <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"checkbox"</span> <span class="attr">name</span> = <span class="string">"hobby"</span> <span class="attr">value</span> = <span class="string">3</span>&gt;</span> 锤子<span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">"file"</span>&gt;</span>文件<span class="tag">&lt;/<span class="name">label</span>&gt;</span>：<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"file"</span> <span class="attr">id</span>=<span class="string">"file"</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">    隐藏：<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"hidden"</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">    提交：<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"submit"</span> <span class="attr">value</span>=<span class="string">"提交"</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">	图片提交：<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"image"</span> <span class="attr">src</span>=<span class="string">"baidu.png"</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">    地区：<span class="tag">&lt;<span class="name">select</span> <span class="attr">name</span>=<span class="string">"place"</span> <span class="attr">id</span>=<span class="string">"place"</span> &gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">option</span>&gt;</span>请选择地区<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span> =<span class="string">"北京"</span>&gt;</span>北京<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">"深圳"</span>&gt;</span>深圳<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">"厦门"</span>&gt;</span>厦门<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="5-CCS"><a href="#5-CCS" class="headerlink" title="5. CCS"></a>5. CCS</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Cascading Style Sheets 层叠样式表，多个样式可以作用在同一个html的元素上，用于页面美化和布局控制</span><br><span class="line">好处：功能强大，将内容展示和样式控制分离，易于分工合作，提高效率，同时可以使页面中的样式得以复用。</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p><strong>CCS与Html的结合：</strong></p>
+<ol>
+<li><p>内联样式：在标签内使用style属性指定css代码：</p>
+<p><code>&lt;div style=&quot;color:red;&quot;&gt;hello css&lt;/div&gt;</code></p>
+</li>
+<li><p>内部样式： 在head标签内，定义style标签，style标签的标签体内容就是css代码：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&gt;    <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">&gt;        <span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line">&gt;            div&#123;color:blue;&#125;</span><br><span class="line">&gt;        <span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line">&gt;    <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">&gt;    <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">&gt;    	<span class="tag">&lt;<span class="name">div</span>&gt;</span>hello css<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">&gt;    <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+</blockquote>
+<blockquote>
+<ol start="3">
+<li><p>外部样式：先定义css资源文件，再在head标签内，定义link标签，引入外部的资源文件</p>
+<p><code>&lt;link rel=&quot;stylesheet&quot; href=&quot;css/a.css&quot;&gt;</code></p>
+<p>（也可以写为：<code>&lt;style&gt;  @import &quot;a.css&quot;;  &lt;/style&gt;</code>）</p>
+</li>
+</ol>
+</blockquote>
+<h3 id="6-CCS选择器"><a href="#6-CCS选择器" class="headerlink" title="6. CCS选择器"></a>6. CCS选择器</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">选择器：筛选具有相似特征的元素</span><br><span class="line">选择器 &#123;</span><br><span class="line">		属性名1:属性值1;</span><br><span class="line">		属性名2:属性值2;</span><br><span class="line">		...</span><br><span class="line">		&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p><strong>基础选择器：</strong></p>
+<ol>
+<li><strong>id选择器</strong>：选择具体的id属性值的元素，建议在一个html页面中id值唯一。语法：<code>#id属性值{}</code></li>
+<li><strong>类选择器</strong>：选择具有相同的class属性值的元素。语法：<code>.class属性值{}</code></li>
+<li><strong>元素选择器</strong>：选择具有相同标签名称的元素。语法：<code>标签名称{}</code></li>
+</ol>
+<p><strong>扩展选择器：</strong></p>
+<ol>
+<li>选择所有元素。语法：<code>*{}</code></li>
+<li>并集选择器：同时筛选多个选择器。语法：<code>选择器1,选择器2{}</code></li>
+<li>子选择器：筛选选择器1元素下的选择器2元素。 语法：<code>选择器1 选择器2{}</code></li>
+<li>直系父选择器：筛选选择器2的父元素选择器1。语法：<code>选择器1 &gt; 选择器2{}</code></li>
+<li>属性选择器：选择元素名称，属性名=属性值的元素。语法：<code>元素名称[属性名=&quot;属性值&quot;]{}</code></li>
+<li>伪类选择器：选择一些元素具有的状态。语法：<code>元素：状态{}</code>  如：超链接标签 &lt; a&gt;：<ul>
+<li><code>a:link{}</code>：初始化的状态</li>
+<li><code>a:visited{}</code>：被访问过的状态</li>
+<li><code>a:active{}</code>：正在访问状态</li>
+<li><code>a:hover{}</code>：鼠标悬浮状态</li>
+</ul>
+</li>
+</ol>
+</blockquote>
+<h3 id="7-CCS属性"><a href="#7-CCS属性" class="headerlink" title="7. CCS属性"></a>7. CCS属性</h3><blockquote>
+<ol>
+<li>字体、文本：<ul>
+<li><code>font-size</code>：字体大小</li>
+<li><code>color</code>：文本颜色</li>
+<li><code>text-align</code>：对齐方式</li>
+<li><code>line-height</code>：行高 </li>
+</ul>
+</li>
+<li>背景<code>background</code>：可以设置背景色或填充图片</li>
+<li>边框<code>border</code>：设置边框，符合属性</li>
+<li>尺寸<code>width</code>：宽度height：高度</li>
+<li>盒子模型：控制布局<ul>
+<li><code>margin</code>：外边距</li>
+<li><code>padding</code>：内边距，默认情况下内边距会影响整个盒子的大小</li>
+<li><code>box-sizing: border-box</code>;  设置盒子的属性，让width和height就是最终盒子的大小</li>
+</ul>
+</li>
+<li>浮动：<code>float</code>，脱离文档流布局（靠左：left；靠右：right）</li>
+</ol>
+</blockquote>
+<h3 id="8-JavaScript基本语法"><a href="#8-JavaScript基本语法" class="headerlink" title="8. JavaScript基本语法"></a>8. JavaScript基本语法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">JavaScript是一门客户端脚本语言，运行在客户端的浏览器中，每一个浏览器都有JavaScript的解析引擎。</span><br><span class="line">JS可以来增强用户和html页面的交互过程，可以来控制html元素，让页面有一些动态的效果，增强用户的体验。</span><br><span class="line">脚本语言：不需要编译，可以直接被浏览器内核解析执行的语言。</span><br><span class="line">客户端脚本语言的标准：ECMAScript，统一了所有客户端脚本语言的编码方式。</span><br></pre></td></tr></table></figure>
+
+<h4 id="结合html"><a href="#结合html" class="headerlink" title="结合html"></a>结合html</h4><ul>
+<li>内部JS：定义&lt; script&gt;，标签体内容就是js代码</li>
+<li>外部JS： 定义&lt; script&gt;，通过src属性引入外部的js文件</li>
+</ul>
+<blockquote>
+<p>注意： &lt; script&gt;可以定义多个，可以定义在html页面的任何地方，但是定义的位置会影响执行顺序。</p>
+<p>建议书写位置：1. head标题中   2. body最下方</p>
+</blockquote>
+<h4 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h4><blockquote>
+<ul>
+<li>原始数据类型：五种<ol>
+<li>number：数字。包含整数、小数、NaN(Not a Number,代表不是数字的数字类型)</li>
+<li>string：字符串。 “abc”、 “a”、 ‘abc’</li>
+<li>boolean：true和false</li>
+<li>null：一个对象为空的占位符(注意：null运算是其typeof类型为object，属设计错误)</li>
+<li>undefined：未定义。一个没有初始化的变量，会被默认赋值为undefined</li>
+</ol>
+</li>
+<li>引用数据类型：对象</li>
+</ul>
+</blockquote>
+<h4 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">JavaScript是弱类型语言，定义变量的语法：var 变量名 = 初始化值</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<ul>
+<li>强类型：在开辟变量存储空间时，定义了空间将来存储数据的数据类型。只能存储固定类型的数据。</li>
+<li>弱类型：在开辟变量存储空间时，不定义空间将来的存储数据类型，可以存放任意类型的数据。</li>
+</ul>
+</blockquote>
+<h4 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h4><blockquote>
+<ul>
+<li><p>被正负号修饰的运算数（+(-)）会自动转换为number类型，如果字面值不是数字，则转为NaN，true转为1，false转为0。</p>
+</li>
+<li><p>==：直接比较字面值，类型不同时，先进行类型转换，再比较</p>
+<p>===：全等于，在比较之前，先判断类型，如果类型不一样，则直接返回false</p>
+</li>
+<li><p>进行逻辑运算时：</p>
+<ol>
+<li>number：0或NaN为假，其他为真</li>
+<li>string：除了空字符串(“”)，其他都是true</li>
+<li>null&amp;undefined:都是false</li>
+<li>对象：所有对象都为true</li>
+</ol>
+</li>
+</ul>
+</blockquote>
+<h3 id="9-JavaScript基本对象"><a href="#9-JavaScript基本对象" class="headerlink" title="9. JavaScript基本对象"></a>9. JavaScript基本对象</h3><h4 id="Function-函数对象"><a href="#Function-函数对象" class="headerlink" title="Function:函数对象"></a>Function:函数对象</h4><blockquote>
+<ul>
+<li><p>创建：</p>
+<ol>
+<li>var fun = new Function(形式参数列表,方法体)；</li>
+<li>function 方法名称(形式参数列表){<br>   方法体<br>}</li>
+<li>var 方法名 = function(形式参数列表){<pre><code>方法体</code></pre>}</li>
+</ol>
+</li>
+<li><p>方法：</p>
+<p>​    length:代表形参的个数</p>
+</li>
+<li><p>特点：</p>
+<ol>
+<li>JS中不存在方法重载，方法的调用只与方法的名称有关，和参数列表无关</li>
+<li>方法是一个对象，如果定义名称相同的方法，后执行的方法会覆盖之前的方法</li>
+<li>第二种创建方法执行优先级较高，若定义名称相同，会被第三种创建方法覆盖</li>
+<li>在方法声明中有一个隐藏的内置对象（数组）arguments，封装所有的实际参数</li>
+</ol>
+</li>
+</ul>
+</blockquote>
+<h4 id="Array-数组对象"><a href="#Array-数组对象" class="headerlink" title="Array:数组对象"></a>Array:数组对象</h4><blockquote>
+<ul>
+<li><p>创建：</p>
+<ol>
+<li>var arr = new Array(元素列表);</li>
+<li>var arr = new Array(默认长度);</li>
+<li>var arr = [元素列表]</li>
+</ol>
+</li>
+<li><p>方法：</p>
+<ol>
+<li>join(参数)：将数组中的元素按照指定的分隔符拼接为字符串</li>
+<li>push(参数)：向数组的末尾添加一个或更多元素，并返回新的数组长度</li>
+</ol>
+</li>
+<li><p>特点：</p>
+<p>JS中的数组长度可变，元素类型也可变。</p>
+</li>
+</ul>
+</blockquote>
+<h4 id="Date-日期对象"><a href="#Date-日期对象" class="headerlink" title="Date:日期对象"></a>Date:日期对象</h4><blockquote>
+<ul>
+<li>创建：var date = new Date();</li>
+<li>方法：<br>toLocaleString()：返回当前date对象对应的时间本地字符串格式<br>getTime():获取毫秒值。返回当前如期对象描述的时间到1970年1月1日零点的毫秒值差</li>
+</ul>
+</blockquote>
+<h4 id="RegExp-正则表达式对象"><a href="#RegExp-正则表达式对象" class="headerlink" title="RegExp:正则表达式对象"></a>RegExp:正则表达式对象</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">正则表达式也是一个字符串，是专门解决字符串规则匹配的工具，用来定义匹配规则</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<ul>
+<li>创建：<ol>
+<li>var reg = new RegExp(“正则表达式”);</li>
+<li>var reg = /正则表达式/; （表达式不需要双引号，不需要加转义字符）</li>
+</ol>
+</li>
+<li>方法：<ol>
+<li>test(参数)：验证指定的字符串是否符合正则定义的规范    </li>
+<li>match(参数)：可以匹配正则，返回的是匹配正则的内容</li>
+</ol>
+</li>
+</ul>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th align="center">表达式</th>
+<th align="center">含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">x</td>
+<td align="center">字符 x</td>
+</tr>
+<tr>
+<td align="center">\\</td>
+<td align="center">反斜线字符</td>
+</tr>
+<tr>
+<td align="center">[abc]</td>
+<td align="center">a、b 或 c（简单类）</td>
+</tr>
+<tr>
+<td align="center">[^abc]</td>
+<td align="center">任何字符，除了 a、b 或 c（否定）</td>
+</tr>
+<tr>
+<td align="center">[a-zA-Z]</td>
+<td align="center">a 到 z 或 A 到 Z，两头的字母包括在内（范围）</td>
+</tr>
+<tr>
+<td align="center">\w</td>
+<td align="center">单词字符：[a-zA-Z_0-9]</td>
+</tr>
+<tr>
+<td align="center">X?</td>
+<td align="center">X，一次或一次也没有</td>
+</tr>
+<tr>
+<td align="center">X*</td>
+<td align="center">X，零次或多次</td>
+</tr>
+<tr>
+<td align="center">X+</td>
+<td align="center">X，一次或多次</td>
+</tr>
+<tr>
+<td align="center">X{n}</td>
+<td align="center">X，恰好 n 次</td>
+</tr>
+<tr>
+<td align="center">X{n,}</td>
+<td align="center">X，至少 n 次</td>
+</tr>
+<tr>
+<td align="center">X{n,m}</td>
+<td align="center">X，至少 n 次，但是不超过 m 次</td>
+</tr>
+<tr>
+<td align="center">^</td>
+<td align="center">开始</td>
+</tr>
+<tr>
+<td align="center">$</td>
+<td align="center">结束</td>
+</tr>
+</tbody></table>
+<h4 id="Global-全局对象"><a href="#Global-全局对象" class="headerlink" title="Global:全局对象"></a>Global:全局对象</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Global中封装的方法不需要对象就可以直接调用</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>方法：</p>
+<ol>
+<li>encodeURI()：url编码</li>
+<li>decodeURI()：url解码</li>
+<li>encodeURIComponent()：url编码（编码的字符范围更大）</li>
+<li>decodeURIComponent()：url解码</li>
+<li>parseInt()：将字符串转为数字（逐一判断每一个字符是否是数字，直到不是数字为止，将前边数字部分转为number）</li>
+<li>isNaN()：判断一个值是否是NaN（NaN六亲不认，连自己都不认。NaN参与的==比较全部问false）</li>
+<li>eval()：将一个字符串转换为JS代码，并把它作为脚本代码来执行</li>
+</ol>
+</blockquote>
+<h3 id="10-BOM"><a href="#10-BOM" class="headerlink" title="10. BOM"></a>10. BOM</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Browser Object Model 浏览器对象模型：将浏览器的各个组成部分封装成为对象</span><br></pre></td></tr></table></figure>
+
+<h4 id="Window-窗口对象"><a href="#Window-窗口对象" class="headerlink" title="Window:窗口对象"></a>Window:窗口对象</h4><blockquote>
+<ul>
+<li><p>弹出框相关方法：</p>
+<ol>
+<li>alert()：显示带有一段消息和一个确认按钮的警告框</li>
+<li>confirm()：显示带有一段消息以及确认按钮和取消按钮的对话框。<ul>
+<li>如果用户点击确定按钮，则方法返回true</li>
+<li>如果用户点击取消按钮，则方法返回false</li>
+</ul>
+</li>
+<li>prompt()：显示可提示用户输入的对话框，返回用户输入的值。</li>
+</ol>
+</li>
+<li><p>打开关闭窗口相关方法：</p>
+<ol>
+<li>close()：关闭调用此方法的浏览器窗口</li>
+<li>open()：打开一个新的浏览器窗口，返回新的window对象</li>
+</ol>
+</li>
+<li><p>定时器相关方法：</p>
+<ol>
+<li><p>setTimeout(js代码或者方法对象，毫秒值)：在指定的毫秒数后调用函数或计算表达式</p>
+<p>   返回值：唯一标识，用于取消定时器</p>
+</li>
+<li><p>clearTimeout()：取消由 setTimeout() 方法设置的 timeout</p>
+</li>
+<li><p>setInterval()：按照指定的周期（以毫秒计）来调用函数或计算表达式</p>
+</li>
+<li><p>clearInterval()：取消由 setInterval() 设置的 timeout</p>
+</li>
+</ol>
+</li>
+</ul>
+</blockquote>
+<blockquote>
+<p><strong>注意</strong>：Window可以获取其他BOM对象【history/location/navigator/screen】，DOM对象【document】。</p>
+<p>Window对象不需要创建可以直接使用，window.方法名()，且window本身可省略</p>
+</blockquote>
+<h4 id="Location-地址栏对象"><a href="#Location-地址栏对象" class="headerlink" title="Location:地址栏对象"></a>Location:地址栏对象</h4><blockquote>
+<ul>
+<li>方法：reload()：重新加载当前文档，同刷新</li>
+</ul>
+</blockquote>
+<h4 id="History-历史记录对象"><a href="#History-历史记录对象" class="headerlink" title="History:历史记录对象"></a>History:历史记录对象</h4><blockquote>
+<ul>
+<li>方法：<ol>
+<li>back()：加载 history 列表中的前一个 URL</li>
+<li>forward()：加载 history 列表中的下一个 URL</li>
+<li>go(参数)：加载 history 列表中的某个具体页面（参数：前进(正数)或后退(负数)几个历史记录）</li>
+<li>length：返回当前窗口历史列表中的 URL 数量。</li>
+</ol>
+</li>
+</ul>
+</blockquote>
+<h4 id="Navigator-浏览器对象"><a href="#Navigator-浏览器对象" class="headerlink" title="Navigator:浏览器对象"></a>Navigator:浏览器对象</h4><h4 id="Screen-显示器屏幕对象"><a href="#Screen-显示器屏幕对象" class="headerlink" title="Screen:显示器屏幕对象"></a>Screen:显示器屏幕对象</h4><h3 id="11-DOM"><a href="#11-DOM" class="headerlink" title="11. DOM"></a>11. DOM</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Document Object Model 文档对象模型：将标记语言文档的各个组成部分封装为对象。可以使用这些对象对标记语言文档进行CRUD的动态操作。</span><br><span class="line">W3C标准中，DOM被分为三个不同的部分：</span><br><span class="line">1. 核心DOM -针对任何结构化文档的标准模型</span><br><span class="line">2. XML DOM -针对XML文档的标准模型</span><br><span class="line">3. HTML DOM -针对HTML文档的标准模型</span><br></pre></td></tr></table></figure>
+
+<h4 id="Document-文档对象"><a href="#Document-文档对象" class="headerlink" title="Document:文档对象"></a>Document:文档对象</h4><blockquote>
+<ul>
+<li>获取：在HTML DOM模型中可以通过window对象来获取</li>
+<li>获取Element对象方法：<ol>
+<li>getElementBy<strong>Id</strong>()：根据id属性值获取元素对象。</li>
+<li>getElementsBy<strong>TagName</strong>()：根据标签名称获取元素对象们，返回值是一个数组</li>
+<li>getElementsBy<strong>ClassName</strong>()：根据Class属性值获取元素对象们，返回值是一个数组</li>
+<li>getElementsBy<strong>Name</strong>()：根据name属性值获取元素对象们，返回值是一个数组</li>
+</ol>
+</li>
+<li>创建其他DOM对象方法：<ol>
+<li>createAttribute(name)：创建Attribute属性对象</li>
+<li>createComment()：创建Comment注释对象</li>
+<li>createElement()：创建Element元素对象</li>
+<li>createTextNode()：创建Text文本对象</li>
+</ol>
+</li>
+</ul>
+</blockquote>
+<h4 id="Element-元素对象"><a href="#Element-元素对象" class="headerlink" title="Element:元素对象"></a>Element:元素对象</h4><blockquote>
+<ul>
+<li>属性：<ol>
+<li>previousSibling：获取该元素的前一个节点</li>
+<li>nextSibling：获取该元素的后一个节点</li>
+<li>innerHTML：可以获取标签内所有的内容，包括标签</li>
+<li>innerText：可以获取标签内所有的文本内容，不包括标签</li>
+</ol>
+</li>
+<li>方法：<ol>
+<li>removeAttribute()：删除属性</li>
+<li>setAttribute()：设置属性</li>
+</ol>
+</li>
+</ul>
+</blockquote>
+<h4 id="Node-节点对象"><a href="#Node-节点对象" class="headerlink" title="Node:节点对象"></a>Node:节点对象</h4><blockquote>
+<ul>
+<li>特点：所有dom对象都可以被认为是一个节点</li>
+<li>属性：parentNode 返回节点的父节点</li>
+<li>方法：<ol>
+<li>appendChild()：向节点的子节点列表的结尾添加新的子节点。</li>
+<li>removeChild()：删除（并返回）当前节点的指定子节点。</li>
+<li>replaceChild()：用新节点替换一个子节点。</li>
+</ol>
+</li>
+</ul>
+</blockquote>
+<h4 id="Attribute-属性对象"><a href="#Attribute-属性对象" class="headerlink" title="Attribute:属性对象"></a>Attribute:属性对象</h4><h4 id="Text-文本对象"><a href="#Text-文本对象" class="headerlink" title="Text:文本对象"></a>Text:文本对象</h4><h4 id="Comment-注释对象"><a href="#Comment-注释对象" class="headerlink" title="Comment:注释对象"></a>Comment:注释对象</h4><h3 id="12-事件监听机制"><a href="#12-事件监听机制" class="headerlink" title="12. 事件监听机制"></a>12. 事件监听机制</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">概念：某些组件（按钮，文本输入框...）被执行了某些操作（单击，双击，键盘按下，鼠标移动...）后，触发某些代码的执行。</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>常见的事件：</p>
+<ol>
+<li><p>点击事件：</p>
+<ul>
+<li>onclick：单击事件</li>
+<li>ondblclick：双击事件</li>
+</ul>
+</li>
+<li><p>焦点事件：（input框里面有光标的时候，叫获取焦点）</p>
+<ul>
+<li>onblur：失去焦点</li>
+<li>onfocus：元素获得焦点</li>
+</ul>
+</li>
+<li><p>加载事件：</p>
+<ul>
+<li><p>onload：在页面当中所有的内容加载完之后触发，常作为入口函数</p>
+<p><code>window.onload = function(){}</code></p>
+</li>
+</ul>
+</li>
+<li><p>鼠标事件：</p>
+<ul>
+<li>onmousedown    鼠标按钮被按下</li>
+<li>onmouseup         鼠标按键被松开</li>
+<li>onmousemove    鼠标被移动</li>
+<li>onmouseover      鼠标移到某元素之上</li>
+<li>onmouseout        鼠标从某元素移开</li>
+</ul>
+</li>
+<li><p>键盘事件：</p>
+<ul>
+<li>onkeydown    某个键盘按键被按下</li>
+<li>onkeyup         某个键盘按键被松开</li>
+<li>onkeypress    某个键盘按键被按下并松开</li>
+</ul>
+</li>
+<li><p>选择和改变：</p>
+<ul>
+<li>onchange    域的内容被改变。失焦后触发</li>
+<li>onselect       文本被选中</li>
+</ul>
+</li>
+<li><p>表单事件：</p>
+<ul>
+<li>onsubmit    确认按钮被点击</li>
+<li>onreset         重置按钮被点击</li>
+</ul>
+</li>
+</ol>
+</blockquote>
+<h3 id="13-综合案例"><a href="#13-综合案例" class="headerlink" title="13. 综合案例"></a>13. 综合案例</h3><h4 id="动态表格"><a href="#动态表格" class="headerlink" title="动态表格"></a>动态表格</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>动态表格<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line">        table&#123;</span><br><span class="line">            border: 1px solid;</span><br><span class="line">            margin: auto;</span><br><span class="line">            width: 500px;</span><br><span class="line">        &#125;</span><br><span class="line">        td,th&#123;</span><br><span class="line">            text-align: center;</span><br><span class="line">            border: 1px solid;</span><br><span class="line">        &#125;</span><br><span class="line">        div&#123;</span><br><span class="line">            text-align: center;</span><br><span class="line">            margin: 50px;</span><br><span class="line">        &#125;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">id</span>=<span class="string">"id"</span> <span class="attr">placeholder</span>=<span class="string">"请输入编号"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">id</span>=<span class="string">"name"</span>  <span class="attr">placeholder</span>=<span class="string">"请输入姓名"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">id</span>=<span class="string">"gender"</span>  <span class="attr">placeholder</span>=<span class="string">"请输入性别"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">value</span>=<span class="string">"添加"</span> <span class="attr">id</span>=<span class="string">"btn_add"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">table</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">caption</span>&gt;</span>学生信息表<span class="tag">&lt;/<span class="name">caption</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">th</span>&gt;</span>编号<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">th</span>&gt;</span>姓名<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">th</span>&gt;</span>性别<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">th</span>&gt;</span>操作<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">table</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line">//给添加按钮绑定单击事件</span><br><span class="line">document.getElementById("btn_add").onclick = function () &#123;</span><br><span class="line">	//获取文本框内容</span><br><span class="line">    var id = document.getElementById("id").value;</span><br><span class="line">    var name = document.getElementById("name").value;</span><br><span class="line">    var gender = document.getElementById("gender").value;</span><br><span class="line">    //将输入的内容添加到表格    </span><br><span class="line">	var table = document.getElementsByTagName("table")[0];</span><br><span class="line"><span class="xml">	table.innerHTML += '<span class="tag">&lt;<span class="name">tr</span>&gt;</span>\n' +'<span class="tag">&lt;<span class="name">td</span>&gt;</span>'+ id +'<span class="tag">&lt;/<span class="name">td</span>&gt;</span>\n' +</span></span><br><span class="line"><span class="xml">		'<span class="tag">&lt;<span class="name">td</span>&gt;</span>'+ name +'<span class="tag">&lt;/<span class="name">td</span>&gt;</span>\n' +'<span class="tag">&lt;<span class="name">td</span>&gt;</span>'+ gender +'<span class="tag">&lt;/<span class="name">td</span>&gt;</span>\n' +</span></span><br><span class="line"><span class="xml">		'<span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"javascript:void(0)"</span> <span class="attr">onclick</span>=<span class="string">"delTr(this)"</span>&gt;</span>删除<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span>\n' +'<span class="tag">&lt;/<span class="name">tr</span>&gt;</span>';</span></span><br><span class="line">&#125;</span><br><span class="line">//定义删除方法</span><br><span class="line">function delTr(obj) &#123;  //节点关系：a -&gt; td -&gt; tr -&gt; table</span><br><span class="line">	var table = obj.parentNode.parentNode.parentNode;</span><br><span class="line">	var tr = obj.parentNode.parentNode;</span><br><span class="line">	table.removeChild(tr);</span><br><span class="line">&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="表单校验"><a href="#表单校验" class="headerlink" title="表单校验"></a>表单校验</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line">// 校验name的方法</span><br><span class="line">function checkName() &#123;</span><br><span class="line">	var name = document.getElementById("name").value;</span><br><span class="line">	var flag = /^[a-zA-Z]&#123;1,12&#125;$/.test(name);</span><br><span class="line">	var name_add = document.getElementById("span_name");</span><br><span class="line">	if(flag) &#123;</span><br><span class="line"><span class="xml">		name_add.innerHTML = "<span class="tag">&lt;<span class="name">img</span> <span class="attr">height</span> = <span class="string">'25'</span> <span class="attr">width</span> = <span class="string">'35'</span> " +"<span class="attr">src</span> = <span class="string">'img/gou.png'</span>&gt;</span>"</span></span><br><span class="line">	&#125;else&#123;</span><br><span class="line">		name_add.innerHTML = "姓名格式有误";</span><br><span class="line">	&#125;</span><br><span class="line">	return flag;</span><br><span class="line">&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--表单校验的第一种方式--&gt;</span></span><br><span class="line">var form = document.getElementById("form");</span><br><span class="line">form.onsubmit = checkName;</span><br><span class="line"><span class="comment">&lt;!--表单校验的第二种方式--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">"#"</span> <span class="attr">id</span>=<span class="string">"form"</span> <span class="attr">onsubmit</span>=<span class="string">"return checkName()"</span>&gt;</span></span><br><span class="line">    ...</span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="14-Bootstrap"><a href="#14-Bootstrap" class="headerlink" title="14. Bootstrap"></a>14. Bootstrap</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">一个前端开发的响应式布局框架，基于HTML、CSS、JavaScript开发，简洁灵活，使得 Web 开发更加快捷。</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--快速入门：导入Bootstrap文件和jQuery包，创建html页面，引入必要的资源文件： --&gt;</span></span><br><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"zh-CN"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"utf-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"X-UA-Compatible"</span> <span class="attr">content</span>=<span class="string">"IE=edge"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width, initial-scale=1"</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 上述3个meta标签*必须*放在最前面，任何其他内容都必须跟随其后！ --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Index<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!-- Bootstrap --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">link</span> <span class="attr">href</span>=<span class="string">"css/bootstrap.min.css"</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!-- jQuery (necessary for Bootstrap's JavaScript plugins) --&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- Bootstrap中js插件都是依赖于jquery的，要第一步引入--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"js/jquery-3.2.1.min.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- Include all compiled plugins (below), or include individual files as needed --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"js/bootstrap.min.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">h1</span>&gt;</span>Hello World！<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="响应式布局"><a href="#响应式布局" class="headerlink" title="响应式布局"></a>响应式布局</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">响应式布局可以使同一套页面兼容不同分辨率的设备。</span><br><span class="line">实现方式依赖于栅格系统：将一行平均分成12个格子，可以指定元素占几个格子。</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>实现步骤：</p>
+<ol>
+<li><p>定义容器：作用相当于&lt; table&gt;，样式：&lt; div&gt;</p>
+<p>容器分类：1. container：两边留白；     2. container-fluid：每一种设备都是100%宽度</p>
+</li>
+<li><p>定义行：作用相当于&lt; tr&gt;，样式：&lt; row&gt;</p>
+</li>
+<li><p>定义元素：指定元素使用的设备和格子数目，样式：col-设备代号-格子数目</p>
+<p>设备代号：</p>
+<ul>
+<li>xs：超小屏幕 手机 (&lt;768px)</li>
+<li>sm：小屏幕 平板 (≥768px)</li>
+<li>md：中等屏幕 桌面显示器 (≥992px)</li>
+<li>lg：大屏幕 大桌面显示器 (≥1200px)</li>
+</ul>
+</li>
+</ol>
+<p>注意：</p>
+<ol>
+<li>一行中如果格子数目超过12，则超出部分自动换行</li>
+<li>栅格类属性可以向上兼容，小尺寸设备代号兼容大尺寸设备显示</li>
+<li>如果设备真实宽度小于栅格指定的设备代码的临界值，会一个元素占满一整行</li>
+</ol>
+</blockquote>
+<h3 id="15-JQuery"><a href="#15-JQuery" class="headerlink" title="15. JQuery"></a>15. JQuery</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">jQuery是一个快速、简洁的JavaScript框架，封装JavaScript常用的功能代码，提供一种简便的JavaScript设计模式，优化HTML文档操作、事件处理、动画设计和Ajax交互，本质上就是一些js文件。</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>JQuery对象和JS对象方法不通用，需要转换：</p>
+<ul>
+<li>jq – &gt; js：jq对象[索引] 或者 jq对象.get(索引)</li>
+<li>js – &gt; jq：$(js对象)</li>
+</ul>
+<p><strong>入口函数：</strong><code>$(function(){});</code> 与window.onload不同，可以定义多次</p>
+<p><strong>样式控制：</strong><code>$(&quot;#div1&quot;).css(&quot;backgroundColor&quot;,&quot;pink&quot;);</code></p>
+</blockquote>
+<h4 id="选择器操作"><a href="#选择器操作" class="headerlink" title="选择器操作"></a>选择器操作</h4><blockquote>
+<ul>
+<li>基本选择器<ol>
+<li>标签选择器(元素选择器)：<code>$(&quot;html标签名&quot;)</code>获得所有匹配标签名称的元素</li>
+<li>id选择器：<code>$(&quot;#id的属性值&quot;)</code>获得与指定id属性值匹配的元素</li>
+<li>类选择器：<code>$(&quot;.class的属性值&quot;)</code> 获得与指定的class属性值匹配的元素</li>
+<li>并集选择器：<code>$(&quot;选择器1,选择器2....&quot;)</code>获取多个选择器选中的所有元素</li>
+</ol>
+</li>
+<li>层级选择器<ol>
+<li>后代选择器：<code>$(&quot;A B&quot;)</code> 选择A元素内部的所有B元素        </li>
+<li>子选择器：<code>$(&quot;A &gt; B&quot;)</code> 选择A元素内部的所有B子元素</li>
+</ol>
+</li>
+<li>属性选择器<ol>
+<li>属性名称选择器：<code>$(&quot;A[属性名]&quot;)</code> 包含指定属性的选择器</li>
+<li>属性选择器：<code>$(&quot;A[属性名=&#39;值&#39;]&quot;)</code> 包含指定属性等于指定值的选择器</li>
+<li>复合属性选择器：<code>$(&quot;A[属性名=&#39;值&#39;][]...&quot;)</code>包含多个属性条件的选择器</li>
+</ol>
+</li>
+<li>过滤选择器<ol>
+<li>首元素选择器：<code>first</code> 获得选择的元素中的第一个元素</li>
+<li>尾元素选择器：<code>last</code> 获得选择的元素中的最后一个元素</li>
+<li>非元素选择器：<code>not(selector)</code> 不包括指定内容的元素</li>
+<li>偶数选择器：<code>even</code> 偶数，从 0 开始计数</li>
+<li>奇数选择器：<code>odd</code> 奇数，从 0 开始计数</li>
+<li>等于索引选择器：<code>eq(index)</code> 指定索引元素</li>
+<li>大于索引选择器：<code>gt(index)</code> 大于指定索引元素</li>
+<li>小于索引选择器：<code>t(index)</code>小于指定索引元素</li>
+<li>标题选择器：<code>header</code> 获得标题（h1~h6）元素，固定写法</li>
+</ol>
+</li>
+<li>表单过滤选择器<ol>
+<li>可用元素选择器：<code>enabled</code>获得可用元素</li>
+<li>不可用元素选择器：<code>disabled</code> 获得不可用元素</li>
+<li>选中选择器：<code>checked</code> 获得单选/复选框选中的元素</li>
+<li>选中选择器：<code>selected</code> 获得下拉框选中的元素</li>
+</ol>
+</li>
+</ul>
+</blockquote>
+<h4 id="DOM操作"><a href="#DOM操作" class="headerlink" title="DOM操作"></a>DOM操作</h4><blockquote>
+<ul>
+<li>内容操作<ol>
+<li><code>html()</code>：获取/设置元素的标签体内容    <code>&lt;a&gt;&lt;font&gt;内容&lt;/font&gt;&lt;/a&gt; --&gt; &lt;font&gt;内容&lt;/font&gt;</code></li>
+<li><code>text()</code>：获取/设置元素的标签体纯文本内容     <code>&lt;a&gt;&lt;font&gt;内容&lt;/font&gt;&lt;/a&gt; --&gt; 内容</code></li>
+<li><code>val()</code>：获取/设置元素的value属性值</li>
+</ol>
+</li>
+<li>属性操作<ol>
+<li><code>attr()</code>：获取/设置元素的属性（偏向操作元素的固有属性）</li>
+<li><code>removeAttr()</code>：删除属性</li>
+<li><code>prop()</code>：获取/设置元素的属性（偏向操作元素自定义的属性）</li>
+<li><code>removeProp()</code>：删除属性</li>
+<li><code>addClass()</code>：添加class属性值（并且保留原class属性）</li>
+<li><code>removeClass()</code>：删除class属性值</li>
+<li><code>toggleClass()</code>：切换class属性（若对象已有要切换的class属性，则删除；不存在则添加）</li>
+<li><code>css()</code>：操作对象的css样式</li>
+</ol>
+</li>
+<li>CRUD操作<ol>
+<li><code>A.append(B)</code>：对象A将对象B追加到自己元素内部的末尾</li>
+<li><code>A.appendTo(B)</code>：对象A将自己添加到对象B元素内部的末尾</li>
+<li><code>A.prepend(B)</code>：对象A将对象B追加到自己元素内部的开头</li>
+<li><code>A.prependTo(B)</code>：对象A将自己追加到对象B元素内部的开头</li>
+<li><code>A.after(B)</code>：对象A将对象B添加到自己后边，对象A和对象B是兄弟关系</li>
+<li><code>A.before(B)</code>：对象A将对象B添加到自己前边，对象A和对象B是兄弟关系</li>
+<li><code>A.insertAfter(B)</code>：对象A将自己添加到对象B后边，对象A和对象B是兄弟关系</li>
+<li><code>A.before(B)</code>：对象A将自己添加到对象B前边，对象A和对象B是兄弟关系</li>
+<li><code>A.remove()</code>：将对象A删除掉，也可以添加一个参数，删除指定标签内部的某个标签</li>
+<li><code>A.empty()</code>：将对象A的后代元素全部清空，但是保留当前对象以及其属性节点</li>
+</ol>
+</li>
+</ul>
+</blockquote>
+<h4 id="高级操作"><a href="#高级操作" class="headerlink" title="高级操作"></a>高级操作</h4><blockquote>
+<ul>
+<li><p>动画操作</p>
+<ul>
+<li>默认显示和隐藏方式<ol>
+<li><code>show([speed,[easing],[fn]])</code></li>
+<li><code>hide([speed,[easing],[fn]])</code></li>
+<li><code>toggle([speed],[easing],[fn])</code></li>
+</ol>
+</li>
+<li>滑动显示和隐藏方式<ol>
+<li><code>slideDown([speed],[easing],[fn])</code></li>
+<li><code>slideUp([speed,[easing],[fn]])</code></li>
+<li><code>slideToggle([speed],[easing],[fn])</code></li>
+</ol>
+</li>
+<li>淡入淡出显示和隐藏方式<ol>
+<li><code>fadeIn([speed],[easing],[fn])</code></li>
+<li><code>fadeOut([speed],[easing],[fn])</code></li>
+<li><code>fadeToggle([speed,[easing],[fn]])</code></li>
+</ol>
+</li>
+<li>三个参数含义：<ol>
+<li>speed：表示动画时长的毫秒数，或三个预定义的值(slow,normal, fast)</li>
+<li>easing：用来指定切换效果，默认是swing(慢&gt;快&gt;慢)，可用参数linear(匀速)</li>
+<li>fn：在动画完成时执行的函数，每个元素执行一次</li>
+</ol>
+</li>
+</ul>
+</li>
+<li><p>遍历操作</p>
+<ul>
+<li>jq对象.each(callback)：<code>citys.each(function(index,element) {});</code></li>
+<li>$.each(object, [callback])：<code>JQuery.each(citys,function(index,element) {});</code></li>
+<li>for…of：<code>for(city of citys) {};</code>    （jquery 3.0 版本之后提供的方式）</li>
+</ul>
+</li>
+<li><p>事件绑定</p>
+<ul>
+<li><p>标准绑定：jq对象.事件方法(回调函数)；</p>
+</li>
+<li><p>绑定事件：jq对象.on(“事件名称”,回调函数)</p>
+</li>
+<li><p>解除绑定：jq对象.off(“事件名称”)</p>
+</li>
+<li><p>事件切换：jq对象.toggle(fn1,fn2…)    （通过单击循环切换方法）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt;     1.9版本中.toggle() 方法删除，JQuery Migrate（迁移）插件可以恢复此功能。</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li><p>插件操作</p>
+<ul>
+<li><p><code>$.fn.extend(object)</code>：增强JQuery的对象的功能</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&gt;     $.fn.extend(&#123;</span><br><span class="line">&gt;         check:<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">&gt;        		<span class="keyword">this</span>.prop(<span class="string">"checked"</span>, <span class="literal">true</span>);</span><br><span class="line">&gt;         &#125;,</span><br><span class="line">&gt;         uncheck:<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">&gt;         	<span class="keyword">this</span>.prop(<span class="string">"checked"</span>, <span class="literal">false</span>);</span><br><span class="line">&gt;         &#125;</span><br><span class="line">&gt;     &#125;)</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li><p><code>$.extend(object)</code>：增强JQuery全局的功能</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&gt;      $.extend(&#123;</span><br><span class="line">&gt;          max: <span class="function"><span class="keyword">function</span> (<span class="params">a, b</span>) </span>&#123;</span><br><span class="line">&gt;          	<span class="keyword">return</span> a &gt; b ? a : b;</span><br><span class="line">&gt;          &#125;,</span><br><span class="line">&gt;         min: <span class="function"><span class="keyword">function</span> (<span class="params">a, b</span>) </span>&#123;</span><br><span class="line">&gt;         	<span class="keyword">return</span> a &lt; b ? a : b;</span><br><span class="line">&gt;         &#125;</span><br><span class="line">&gt;     &#125;)</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</blockquote>
+<h3 id="16-AJAX"><a href="#16-AJAX" class="headerlink" title="16. AJAX"></a>16. AJAX</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ASynchronous JavaScript And XML，可以使网页实现异步更新的技术，在服务器处理请求的过程中，客户端可以不需要等待服务器端的响应，进行其他的操作。这意味着可以在不重新加载整个网页的情况下，对网页的部分进行更新。</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">JQuery实现方式：</span><br><span class="line"><span class="comment">//1.使用$.ajax()发送异步请求</span></span><br><span class="line">$.ajax(&#123;</span><br><span class="line">	url:<span class="string">"ajaxServlet"</span>, <span class="comment">// 请求路径</span></span><br><span class="line">    type:<span class="string">"POST"</span>, <span class="comment">//请求方式</span></span><br><span class="line">    data:&#123;<span class="string">"username"</span>:<span class="string">"jack"</span>,<span class="string">"age"</span>:<span class="number">23</span>&#125;, <span class="comment">//请求参数</span></span><br><span class="line">    success:<span class="function"><span class="keyword">function</span> (<span class="params">data</span>) </span>&#123;	<span class="comment">//响应成功后的回调函数</span></span><br><span class="line">        alert(data);</span><br><span class="line">    &#125;,</span><br><span class="line">    error:<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;	<span class="comment">//若响应失败的回调函数</span></span><br><span class="line">        alert(<span class="string">"出错啦..."</span>)</span><br><span class="line">    &#125;,</span><br><span class="line">    dataType:<span class="string">"text"</span><span class="comment">//设置接受到的响应数据的格式</span></span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">//2. $.get()：发送get请求</span></span><br><span class="line">语法：$.<span class="keyword">get</span>(url, [data], [callback], [type])</span><br><span class="line">参数：url：请求路径；data：请求参数；callback：回调函数；type：响应结果的类型；</span><br><span class="line">//3. $.post()：发送post请求  </span><br><span class="line">方法同$.<span class="keyword">get</span>()</span><br></pre></td></tr></table></figure>
+
+<h3 id="17-JSON"><a href="#17-JSON" class="headerlink" title="17. JSON"></a>17. JSON</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">JavaScript Object Notation，JavaScript的对象表示法，多用于存储和交换文本信息的语法，进行数据传输</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p><strong>基本规则</strong>：<code>var p = {&quot;name&quot;:&quot;张三&quot;,&quot;age&quot;:23,&quot;gender&quot;:&quot;男&quot;};</code></p>
+<ul>
+<li>JSON数据由键值对构成，键可以用单引号、双引号包裹，也可以不使用引号</li>
+<li>值的取值类型有六种：<ol>
+<li>数字（整数或浮点数）</li>
+<li>字符串（在双引号中）</li>
+<li>逻辑值（true 或 false）</li>
+<li>数组（在方括号中）    {“persons”:[{},{}]}</li>
+<li>对象（在花括号中） {“address”:{“province”：”陕西”….}}</li>
+<li>null</li>
+</ol>
+</li>
+<li>数据由逗号分隔：多个键值对由逗号分隔</li>
+<li>花括号保存对象：使用{}定义json 格式</li>
+<li>方括号保存数组：[]</li>
+</ul>
+<p><strong>获取数据</strong></p>
+<ul>
+<li>json对象.键名</li>
+<li>json对象[“键名”]</li>
+<li>数组对象[索引]</li>
+</ul>
+<p><strong>注解</strong></p>
+<ul>
+<li>@JsonIgnore：排除属性，用于JavaBean成员变量上</li>
+<li>@JsonFormat：属性值的格式化     <code>@JsonFormat(pattern = &quot;yyyy-MM-dd&quot;)</code></li>
+</ul>
+</blockquote>
+<h4 id="JSON数据和Java对象的相互转换"><a href="#JSON数据和Java对象的相互转换" class="headerlink" title="JSON数据和Java对象的相互转换"></a>JSON数据和Java对象的相互转换</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">常见的JSON解析器：Jsonlib，Gson，fastjson，jackson</span><br><span class="line"><span class="number">1</span>. 导入jackson的相关jar包</span><br><span class="line"><span class="number">2</span>. 创建Jackson核心对象 ObjectMapper</span><br><span class="line"><span class="number">3</span>. 调用ObjectMapper的相关方法进行转换</span><br><span class="line"><span class="comment">//将JSON数转换为java对象据：</span></span><br><span class="line">Object obj = mapper.readValue(json, Object.class);</span><br><span class="line"><span class="comment">//将java对象转换为JSON数据：</span></span><br><span class="line">String json = mapper.writeValueAsString(obj);<span class="comment">//将obj对象转换为JSON字符串</span></span><br><span class="line">mapper.writeValue(<span class="keyword">new</span> File(<span class="string">"C://a.txt"</span>),obj);<span class="comment">//将obj对象转换为JSON字符串，并保存到指定的文件中</span></span><br><span class="line">mapper.writeValue(response.getWriter(), obj);<span class="comment">//将obj对象转换为JSON字符串，并响应至请求来源处</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="18-案例展示：用户名检验"><a href="#18-案例展示：用户名检验" class="headerlink" title="18. 案例展示：用户名检验"></a>18. 案例展示：用户名检验</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//Servlet代码</span></span><br><span class="line"><span class="meta">@WebServlet</span>(<span class="string">"/findUserServlet"</span>)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">FindUserServlet</span> <span class="keyword">extends</span> <span class="title">HttpServlet</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">doPost</span><span class="params">(...)</span> <span class="keyword">throws</span> IOException </span>&#123;</span><br><span class="line">        request.setCharacterEncoding(<span class="string">"utf-8"</span>);</span><br><span class="line">        response.setContentType(<span class="string">"application/json;charset=utf-8"</span>);</span><br><span class="line"></span><br><span class="line">        String username = request.getParameter(<span class="string">"username"</span>);</span><br><span class="line">        User user = UserDao.username_check(username);</span><br><span class="line">        HashMap&lt;String, Object&gt; map = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">        <span class="keyword">if</span> (user != <span class="keyword">null</span>) &#123;</span><br><span class="line">            map.put(<span class="string">"userExist"</span>, <span class="keyword">true</span>);</span><br><span class="line">            map.put(<span class="string">"msg"</span>, <span class="string">"该用户名已存在"</span>);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            map.put(<span class="string">"userExist"</span>, <span class="keyword">false</span>);</span><br><span class="line">            map.put(<span class="string">"msg"</span>, <span class="string">"该用户名可用"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//将map转为JSON，并传给客户端</span></span><br><span class="line">        ObjectMapper mapper = <span class="keyword">new</span> ObjectMapper();</span><br><span class="line">        mapper.writeValue(response.getWriter(), map);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--html代码--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>注册页面<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span> = <span class="string">"js/jquery-3.3.1.min.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">    $(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">        $(<span class="string">"#username"</span>).blur(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;	<span class="comment">//为username绑定失焦事件</span></span></span><br><span class="line"><span class="javascript">            <span class="comment">//将username的内容异步传递给findUserServlet进行判断</span></span></span><br><span class="line"><span class="javascript">            <span class="keyword">var</span> username = $(<span class="keyword">this</span>).val();</span></span><br><span class="line"><span class="javascript">            $.<span class="keyword">get</span>(</span></span><br><span class="line"><span class="javascript">                <span class="string">"findUserServlet"</span>,</span></span><br><span class="line">                &#123;username:username&#125;,</span><br><span class="line"><span class="javascript">                <span class="comment">//data接收mapper.writeValue(response.getWriter(), map)响应的JSON</span></span></span><br><span class="line"><span class="javascript">                <span class="function"><span class="keyword">function</span> (<span class="params">data</span>) </span>&#123;  </span></span><br><span class="line"><span class="javascript">                    <span class="keyword">if</span>(data.userExist) &#123;	<span class="comment">//用户名存在</span></span></span><br><span class="line"><span class="javascript">                        $(<span class="string">"#user_check"</span>).html(data.msg);</span></span><br><span class="line"><span class="javascript">                    &#125;<span class="keyword">else</span> &#123;		<span class="comment">//用户名不存在</span></span></span><br><span class="line"><span class="javascript">                        $(<span class="string">"#user_check"</span>).html(data.msg);</span></span><br><span class="line">	&#125;&#125;)&#125;);&#125;)</span><br><span class="line">    <span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">"username"</span> <span class="attr">id</span>=<span class="string">"username"</span> <span class="attr">placeholder</span>=<span class="string">"请输入用户名"</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">span</span> <span class="attr">id</span>=<span class="string">"user_check"</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">"password"</span> <span class="attr">id</span>=<span class="string">"password"</span> <span class="attr">placeholder</span>=<span class="string">"请输入密码"</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">value</span>=<span class="string">"提交"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/06/16/数据库知识点总结/" rel="next" title="数据库">
+                <i class="fa fa-chevron-left"></i> 数据库
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/06/16/Web核心知识点总结/" rel="prev" title="web核心">
+                web核心 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Inhaltsverzeichnis
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Übersicht
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Eric</p>
+              <div class="site-description motion-element" itemprop="description">Eric's Knowledge Base</div>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">3</span>
+                    <span class="site-state-item-name">Artikel</span>
+                  </a>
+                </div>
+              
+
+              
+
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Web前端知识点总结"><span class="nav-number">1.</span> <span class="nav-text">Web前端知识点总结</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-B-S架构资源"><span class="nav-number">1.0.1.</span> <span class="nav-text">1. B/S架构资源</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-HTML"><span class="nav-number">1.0.2.</span> <span class="nav-text">2. HTML</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-表格标签"><span class="nav-number">1.0.3.</span> <span class="nav-text">3. 表格标签</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-表单标签"><span class="nav-number">1.0.4.</span> <span class="nav-text">4. 表单标签</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-CCS"><span class="nav-number">1.0.5.</span> <span class="nav-text">5. CCS</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-CCS选择器"><span class="nav-number">1.0.6.</span> <span class="nav-text">6. CCS选择器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-CCS属性"><span class="nav-number">1.0.7.</span> <span class="nav-text">7. CCS属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-JavaScript基本语法"><span class="nav-number">1.0.8.</span> <span class="nav-text">8. JavaScript基本语法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#结合html"><span class="nav-number">1.0.8.1.</span> <span class="nav-text">结合html</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#数据类型"><span class="nav-number">1.0.8.2.</span> <span class="nav-text">数据类型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#变量"><span class="nav-number">1.0.8.3.</span> <span class="nav-text">变量</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#运算符"><span class="nav-number">1.0.8.4.</span> <span class="nav-text">运算符</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9-JavaScript基本对象"><span class="nav-number">1.0.9.</span> <span class="nav-text">9. JavaScript基本对象</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Function-函数对象"><span class="nav-number">1.0.9.1.</span> <span class="nav-text">Function:函数对象</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Array-数组对象"><span class="nav-number">1.0.9.2.</span> <span class="nav-text">Array:数组对象</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Date-日期对象"><span class="nav-number">1.0.9.3.</span> <span class="nav-text">Date:日期对象</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#RegExp-正则表达式对象"><span class="nav-number">1.0.9.4.</span> <span class="nav-text">RegExp:正则表达式对象</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Global-全局对象"><span class="nav-number">1.0.9.5.</span> <span class="nav-text">Global:全局对象</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#10-BOM"><span class="nav-number">1.0.10.</span> <span class="nav-text">10. BOM</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Window-窗口对象"><span class="nav-number">1.0.10.1.</span> <span class="nav-text">Window:窗口对象</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Location-地址栏对象"><span class="nav-number">1.0.10.2.</span> <span class="nav-text">Location:地址栏对象</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#History-历史记录对象"><span class="nav-number">1.0.10.3.</span> <span class="nav-text">History:历史记录对象</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Navigator-浏览器对象"><span class="nav-number">1.0.10.4.</span> <span class="nav-text">Navigator:浏览器对象</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Screen-显示器屏幕对象"><span class="nav-number">1.0.10.5.</span> <span class="nav-text">Screen:显示器屏幕对象</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#11-DOM"><span class="nav-number">1.0.11.</span> <span class="nav-text">11. DOM</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Document-文档对象"><span class="nav-number">1.0.11.1.</span> <span class="nav-text">Document:文档对象</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Element-元素对象"><span class="nav-number">1.0.11.2.</span> <span class="nav-text">Element:元素对象</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Node-节点对象"><span class="nav-number">1.0.11.3.</span> <span class="nav-text">Node:节点对象</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Attribute-属性对象"><span class="nav-number">1.0.11.4.</span> <span class="nav-text">Attribute:属性对象</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Text-文本对象"><span class="nav-number">1.0.11.5.</span> <span class="nav-text">Text:文本对象</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Comment-注释对象"><span class="nav-number">1.0.11.6.</span> <span class="nav-text">Comment:注释对象</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#12-事件监听机制"><span class="nav-number">1.0.12.</span> <span class="nav-text">12. 事件监听机制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#13-综合案例"><span class="nav-number">1.0.13.</span> <span class="nav-text">13. 综合案例</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#动态表格"><span class="nav-number">1.0.13.1.</span> <span class="nav-text">动态表格</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#表单校验"><span class="nav-number">1.0.13.2.</span> <span class="nav-text">表单校验</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#14-Bootstrap"><span class="nav-number">1.0.14.</span> <span class="nav-text">14. Bootstrap</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#响应式布局"><span class="nav-number">1.0.14.1.</span> <span class="nav-text">响应式布局</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#15-JQuery"><span class="nav-number">1.0.15.</span> <span class="nav-text">15. JQuery</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#选择器操作"><span class="nav-number">1.0.15.1.</span> <span class="nav-text">选择器操作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#DOM操作"><span class="nav-number">1.0.15.2.</span> <span class="nav-text">DOM操作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#高级操作"><span class="nav-number">1.0.15.3.</span> <span class="nav-text">高级操作</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#16-AJAX"><span class="nav-number">1.0.16.</span> <span class="nav-text">16. AJAX</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#17-JSON"><span class="nav-number">1.0.17.</span> <span class="nav-text">17. JSON</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#JSON数据和Java对象的相互转换"><span class="nav-number">1.0.17.1.</span> <span class="nav-text">JSON数据和Java对象的相互转换</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#18-案例展示：用户名检验"><span class="nav-number">1.0.18.</span> <span class="nav-text">18. 案例展示：用户名检验</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+  
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Eric</span>
+
+  
+
+  
+</div>
+
+
+  <div class="powered-by">Erstellt mit  <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.8.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Design – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.1.2</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="/lib/jquery/index.js?v=3.4.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+  
+
+
+  <script src="/js/utils.js?v=7.1.2"></script>
+
+  <script src="/js/motion.js?v=7.1.2"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/affix.js?v=7.1.2"></script>
+
+  <script src="/js/schemes/pisces.js?v=7.1.2"></script>
+
+
+
+
+  
+  <script src="/js/scrollspy.js?v=7.1.2"></script>
+<script src="/js/post-details.js?v=7.1.2"></script>
+
+
+
+  
+
+
+  <script src="/js/next-boot.js?v=7.1.2"></script>
+
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+
+  
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
